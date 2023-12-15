@@ -1,0 +1,349 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="container">
+    <h1 class="mt-5">LINQ Eruptions</h1>
+
+    <h2 class="mt-5">Stratovolcano Eruptions</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Year</th>
+                <th>Location</th>
+                <th>Elevation</th>
+                <th>Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var eruption in ViewBag.StratovolcanoEruptions)
+            {
+                <tr>
+                    <td>@eruption.Volcano</td>
+                    <td>@eruption.Year</td>
+                    <td>@eruption.Location</td>
+                    <td>@eruption.ElevationInMeters</td>
+                    <td>@eruption.Type</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <h2 class="mt-5">First Chile Eruption</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Year</th>
+                <th>Location</th>
+                <th>Elevation</th>
+                <th>Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (ViewBag.FirstChileEruption != null)
+            {
+                <tr>
+                    <td>@ViewBag.FirstChileEruption.Volcano</td>
+                    <td>@ViewBag.FirstChileEruption.Year</td>
+                    <td>@ViewBag.FirstChileEruption.Location</td>
+                    <td>@ViewBag.FirstChileEruption.ElevationInMeters</td>
+                    <td>@ViewBag.FirstChileEruption.Type</td>
+                </tr>
+            }
+            else
+            {
+                <tr>
+                    <td colspan="5">No Chilean eruption found.</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <h2 class="mt-5">First Hawaiian Is Eruption</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Year</th>
+                <th>Location</th>
+                <th>Elevation</th>
+                <th>Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (ViewBag.FirstHawaiianEruption != null)
+            {
+                <tr>
+                    <td>@ViewBag.FirstHawaiianEruption.Volcano</td>
+                    <td>@ViewBag.FirstHawaiianEruption.Year</td>
+                    <td>@ViewBag.FirstHawaiianEruption.Location</td>
+                    <td>@ViewBag.FirstHawaiianEruption.ElevationInMeters</td>
+                    <td>@ViewBag.FirstHawaiianEruption.Type</td>
+                </tr>
+            }
+            else
+            {
+                <tr>
+                    <td colspan="5">No Hawaiian Is eruption found.</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <h2 class="mt-5">First Greenland Eruption</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Year</th>
+                <th>Location</th>
+                <th>Elevation</th>
+                <th>Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (ViewBag.FirstGreenlandEruption != null)
+            {
+                <tr>
+                    <td>@ViewBag.FirstGreenlandEruption.Volcano</td>
+                    <td>@ViewBag.FirstGreenlandEruption.Year</td>
+                    <td>@ViewBag.FirstGreenlandEruption.Location</td>
+                    <td>@ViewBag.FirstGreenlandEruption.ElevationInMeters</td>
+                    <td>@ViewBag.FirstGreenlandEruption.Type</td>
+                </tr>
+            }
+            else
+            {
+                <tr>
+                    <td colspan="5">No Greenland eruption found.</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <h2 class="mt-5">First Eruption After 1900 in New Zealand</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Year</th>
+                <th>Location</th>
+                <th>Elevation</th>
+                <th>Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (ViewBag.FirstEruptionAfter1900InNZ != null)
+            {
+                <tr>
+                    <td>@ViewBag.FirstEruptionAfter1900InNZ.Volcano</td>
+                    <td>@ViewBag.FirstEruptionAfter1900InNZ.Year</td>
+                    <td>@ViewBag.FirstEruptionAfter1900InNZ.Location</td>
+                    <td>@ViewBag.FirstEruptionAfter1900InNZ.ElevationInMeters</td>
+                    <td>@ViewBag.FirstEruptionAfter1900InNZ.Type</td>
+                </tr>
+            }
+            else
+            {
+                <tr>
+                    <td colspan="5">No matching eruption found in New Zealand after 1900.</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <h2 class="mt-5">Eruptions with Elevation Over 2000m</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Year</th>
+                <th>Location</th>
+                <th>Elevation</th>
+                <th>Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var eruption in ViewBag.HighElevationEruptions)
+            {
+                <tr>
+                    <td>@eruption.Volcano</td>
+                    <td>@eruption.Year</td>
+                    <td>@eruption.Location</td>
+                    <td>@eruption.ElevationInMeters</td>
+                    <td>@eruption.Type</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <h2 class="mt-5">Eruptions with Names Starting with 'L'</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Year</th>
+                <th>Location</th>
+                <th>Elevation</th>
+                <th>Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var eruption in ViewBag.EruptionsStartingWithL as List<Eruption>)
+            {
+                <tr>
+                    <td>@eruption.Volcano</td>
+                    <td>@eruption.Year</td>
+                    <td>@eruption.Location</td>
+                    <td>@eruption.ElevationInMeters</td>
+                    <td>@eruption.Type</td>
+                </tr>
+            }
+            <tr>
+                <td colspan="5">Eruptions found: @((ViewBag.EruptionsStartingWithL as List<Eruption>)?.Count ?? 0)</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2 class="mt-5">Highest Elevation</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Highest Elevation</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>@ViewBag.HighestElevation meters.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2 class="mt-5">Volcano with Highest Elevation</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Volcano with Highest Elevation</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>@ViewBag.VolcanoWithHighestElevation</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2 class="mt-5">Volcano Names Alphabetically</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Volcano Names</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var volcanoName in ViewBag.VolcanoNamesAlphabetically)
+            {
+                <tr>
+                    <td>@volcanoName</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <h2 class="mt-5">Sum of All Elevations</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Sum of All Elevations</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>@ViewBag.SumOfElevations meters.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2 class="mt-5">Any Eruptions in Year 2000</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Any Eruptions in Year 2000</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Did any volcanoes erupt in the year 2000? @ViewBag.AnyEruptionsInYear2000</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2 class="mt-5">First Three Stratovolcanoes</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Year</th>
+                <th>Location</th>
+                <th>Elevation</th>
+                <th>Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var eruption in ViewBag.FirstThreeStratovolcanoes)
+            {
+                <tr>
+                    <td>@eruption.Volcano</td>
+                    <td>@eruption.Year</td>
+                    <td>@eruption.Location</td>
+                    <td>@eruption.ElevationInMeters</td>
+                    <td>@eruption.Type</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <h2 class="mt-5">Eruptions Before Year 1000 Alphabetically</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Year</th>
+                <th>Location</th>
+                <th>Elevation</th>
+                <th>Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var eruption in ViewBag.EruptionsBeforeYear1000Alphabetically)
+            {
+                <tr>
+                    <td>@eruption.Volcano</td>
+                    <td>@eruption.Year</td>
+                    <td>@eruption.Location</td>
+                    <td>@eruption.ElevationInMeters</td>
+                    <td>@eruption.Type</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <h2 class="mt-5">Eruption Names Before Year 1000</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Eruption Names</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var eruptionName in ViewBag.EruptionNamesBeforeYear1000)
+            {
+                <tr>
+                    <td>@eruptionName</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
